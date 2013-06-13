@@ -1,0 +1,5 @@
+Django>=1.5
+South
+gunicorn
+dj-database-url
+psycopg2
