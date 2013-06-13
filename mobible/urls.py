@@ -19,7 +19,7 @@ urlpatterns = patterns('',
 
 # Serving statics ghetto style
 urlpatterns += patterns("",
-    url(r"^static/(?P.*)$", "django.views.static.serve", {
+    url(r'^static/(?P<path>.*)$', "django.views.static.serve", {
         "document_root": settings.STATIC_ROOT,
     }),
 )
