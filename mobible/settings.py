@@ -1,11 +1,16 @@
 # Django settings for mobible project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Your Name', 'your_email@example.com'),
 )
+
+# turn name:name@domain.com into [('name', 'name@domain.com'),]
+ADMINS = [tuple(admin.split(':') for admin in
+          os.environ.get('ADMINS', '').split(','))]
 
 MANAGERS = ADMINS
 
@@ -162,7 +167,6 @@ LOGGING = {
 
 # Parse database configuration from $DATABASE_URL for Heroku
 import dj_database_url
-import os
 
 if 'DATABASE_URL' in os.environ:
     DATABASES['default'] = dj_database_url.config()
