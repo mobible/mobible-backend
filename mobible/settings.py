@@ -9,8 +9,8 @@ ADMINS = (
 )
 
 # turn name:name@domain.com into [('name', 'name@domain.com'),]
-ADMINS = [tuple(admin.split(':') for admin in
-          os.environ.get('ADMINS', '').split(','))]
+ADMINS = [admin.split(':') for admin in
+          os.environ.get('ADMINS', '').split(',')]
 
 MANAGERS = ADMINS
 
