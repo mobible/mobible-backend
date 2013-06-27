@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'djcelery',
+    'djcelery_email',
     'south',
     'dbs',
 )
@@ -174,3 +175,5 @@ djcelery.setup_loader()
 
 BROKER_URL = ('amqp://aupnwtog:BPPR7DB_7sg-djCsUFn_emdUZXzzbsuu@' +
               'lemur.cloudamqp.com/aupnwtog')
+
+EMAIL_BACKEND = 'djcelery_email.backends.CeleryEmailBackend'
