@@ -173,7 +173,12 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 import djcelery
 djcelery.setup_loader()
 
-BROKER_URL = ('amqp://aupnwtog:BPPR7DB_7sg-djCsUFn_emdUZXzzbsuu@' +
-              'lemur.cloudamqp.com/aupnwtog')
+BROKER_URL = os.environ['BROKER_URL']
+
+EMAIL_HOST = os.environ['EMAIL_HOST']
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 EMAIL_BACKEND = 'djcelery_email.backends.CeleryEmailBackend'
