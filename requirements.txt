@@ -3,3 +3,5 @@ South
 gunicorn
 dj-database-url
 psycopg2
+celery
+django-celery
