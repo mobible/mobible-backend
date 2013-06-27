@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'UTC'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'djcelery',
     'south',
     'dbs',
 )
@@ -167,3 +168,9 @@ if 'DATABASE_URL' in os.environ:
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+import djcelery
+djcelery.setup_loader()
+
+BROKER_URL = ('amqp://aupnwtog:BPPR7DB_7sg-djCsUFn_emdUZXzzbsuu@' +
+              'lemur.cloudamqp.com/aupnwtog')
