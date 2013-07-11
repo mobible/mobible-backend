@@ -136,6 +136,7 @@ INSTALLED_APPS = (
     'djcelery_email',
     'south',
     'dbs',
+    'system',
 )
 
 # A sample logging configuration. The only tangible logging
