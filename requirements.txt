@@ -6,3 +6,4 @@ psycopg2
 celery
 django-celery
 django-celery-email
+django-tastypie
