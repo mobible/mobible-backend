@@ -137,6 +137,7 @@ INSTALLED_APPS = (
     'south',
     'dbs',
     'system',
+    'tastypie',
 )
 
 # A sample logging configuration. The only tangible logging
