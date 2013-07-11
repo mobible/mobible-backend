@@ -7,6 +7,10 @@ from django.db import models
 
 class Migration(SchemaMigration):
 
+    depends_on = (
+        ('system', '0001_initial')
+    )
+
     def forwards(self, orm):
         # Adding field 'Journey.language'
         db.add_column(u'dbs_journey', 'language',
