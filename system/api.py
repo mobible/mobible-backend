@@ -15,7 +15,7 @@ class LanguageResource(ModelResource):
 
 
 class JourneyResource(ModelResource):
-    language = fields.ForeignKey(LanguageResource, 'language')
+    language = fields.ForeignKey(LanguageResource, 'language', full=True)
 
     class Meta:
         queryset = Journey.objects.all()
