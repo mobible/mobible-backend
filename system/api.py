@@ -33,17 +33,18 @@ class IntroductionResource(ModelResource):
         queryset = Introduction.objects.all()
         resource_name = 'introduction'
         allowed_methods = ['get']
-        filter = {
+        filtering = {
             'language': ('exact',),
         }
 
 
 class VerseResource(ModelResource):
+    journey = fields.ForeignKey(JourneyResource, 'journey', full=True)
 
     class Meta:
         queryset = Verse.objects.all()
         resource_name = 'verse'
         allowed_methods = ['get']
-        filter = {
+        filtering = {
             'journey': ('exact',),
         }
