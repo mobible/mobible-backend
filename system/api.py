@@ -3,7 +3,7 @@ from tastypie import fields
 
 from system.models import Language, Introduction
 
-from dbs.models import Journey
+from dbs.models import Journey, Verse
 
 
 class LanguageResource(ModelResource):
@@ -35,4 +35,15 @@ class IntroductionResource(ModelResource):
         allowed_methods = ['get']
         filter = {
             'language': ('exact',),
+        }
+
+
+class VerseResource(ModelResource):
+
+    class Meta:
+        queryset = Verse.objects.all()
+        resource_name = 'verse'
+        allowed_methods = ['get']
+        filter = {
+            'journey': ('exact',),
         }
